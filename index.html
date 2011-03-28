@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>command me</title>
+    <style>
+        body { background: #000; }
+        p, input, span, form { font-family: "Menlo", "Monaco", "Courier New", monospace; font-size: 16px; color: #fff; line-height: 16px; }
+        #me { border: 0; outline: none; background: transparent; height: 16px; width: 600px; }
+        #submit { position: absolute; left: -99999px; width: 5px; }
+        #msg { margin: 0; }
+        #logo { font-size: 8px; line-height: 8px; }
+        .entry { margin: 0 0 15px; }
+    </style>
+    <script src="script.js"></script>
+    <script src="nav.js"></script>
+</head>
+<body>
+<p id="logo">&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..&nbsp;..&nbsp;.......,+$O8DDDD88O$+,.......&nbsp;...&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;<br />
+&nbsp;...&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.......:ODDDDDDD8Z$777$O8DDDDDDDZ:...........&nbsp;.&nbsp;.....&nbsp;.&nbsp;..&nbsp;..<br />
+&nbsp;.&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...=ZDDDD7,...................:$DDDD8~.....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.~DDDD7...&nbsp;....&nbsp;...........&nbsp;&nbsp;...&nbsp;...$8DD8,..&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;.&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;.NMM8,.........&nbsp;&nbsp;.......&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;..&nbsp;......~8DDI..&nbsp;....&nbsp;.......&nbsp;..<br />
+........&nbsp;...MMMM$..ZD....:...~8MMMMND8DDNMMMM$,.............ZDD8................<br />
+&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;....M.,..+?:7MMMM=IO=.:+O8887=,........:8M$.....&nbsp;.....ZDD8...&nbsp;....&nbsp;..&nbsp;..<br />
+&nbsp;.&nbsp;.&nbsp;&nbsp;.....7M$..~$$7O7.~+Z.ZD?O+...IZ.......,,:+7~.,NM,.&nbsp;&nbsp;&nbsp;.....+DD+..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;....8DONN..~??:..+.O?:O...$?..ON$~+ZZ~:.....7...~8M.&nbsp;&nbsp;......8D8.&nbsp;..&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+..&nbsp;.&nbsp;&nbsp;..,DD~.M..7....7.,~Z.?.==...MMMMMN...+O=....?ZD88$.7N..&nbsp;..&nbsp;..+DD..&nbsp;&nbsp;...&nbsp;&nbsp;.<br />
+.......=DD...M7.:N=.$.$=$,..+...IMM...~+Z$....,+~:MMMMMMM~.8O.......,DDO.....&nbsp;..<br />
+.&nbsp;&nbsp;...8DD.....+M8..7..,..,.=..MMM.+878......,?..MM8DD8888MM8.M.....&nbsp;..DD8...&nbsp;&nbsp;..<br />
+.&nbsp;...8DD.&nbsp;&nbsp;..M8.&nbsp;.O..=....&nbsp;..MMM.&nbsp;....ND.,ZDI.8MM888888888DMM.NM..&nbsp;....$DO..&nbsp;&nbsp;&nbsp;&nbsp;<br />
+..&nbsp;.ZD$.&nbsp;&nbsp;.&nbsp;M$&nbsp;&nbsp;&nbsp;~...I..&nbsp;&nbsp;&nbsp;&nbsp;.MMMMMM.NMD:..:..OMNDDDDD8888888MM:.M.&nbsp;&nbsp;....OD?..&nbsp;&nbsp;&nbsp;<br />
+..&nbsp;~D8..&nbsp;&nbsp;&nbsp;&nbsp;M7IM.O.,.+.......MZZDMMMMM....&nbsp;..MZZZZZZZZOOONM88MMM.M.......DD,.&nbsp;&nbsp;.<br />
+...DD......$O=MM.$M?.:....:~=M.,?MMD8MN....OD8..........NMNDDDMMM.M......,D8....<br />
+.&nbsp;=DO....&nbsp;.M.MMM..M$......+M.M..87MMDMO....MM:.&nbsp;&nbsp;&nbsp;&nbsp;..8:MMDDDDDNMM~D+..&nbsp;...8D,.&nbsp;.<br />
+..DD......M+DMMMIMMM..7.+7.MM...:7MMNMNNMMZMM........8IMMNNNNNNNMM.M......,D8...<br />
+.~DZ....&nbsp;=M,MM88888M7.,$.ZM......Z~MM88888MM:.....&nbsp;..Z:MMDDD8DDDMMD+D......8D,..<br />
+.8D,.&nbsp;...M:MMNDDDDDDMD...M..&nbsp;&nbsp;&nbsp;.&nbsp;.8NMNDDDMMM.&nbsp;.&nbsp;&nbsp;&nbsp;...I.8MNDDDDNNNMM.M.&nbsp;.&nbsp;..~DZ..<br />
+.DD..&nbsp;..,M.MMDDDD88DDMMMM=.I.&nbsp;.&nbsp;&nbsp;.~:MMDDDMM,....&nbsp;&nbsp;...+:?MM8DDDNNNMMO78&nbsp;&nbsp;&nbsp;...DD..<br />
+:DZ.....$O7MMNDDDDDDNMMN..,~.&nbsp;&nbsp;&nbsp;&nbsp;..8ZMMNMMM..,?.&nbsp;&nbsp;...:+.MMNNNNNNNNMM.M..&nbsp;&nbsp;..8D..<br />
+?D?.....N=MMMD88DDDDDMM7..=.N......,+MMMMM,..O.:......7.MMNDDDDDNNMM&nbsp;M......7D=.<br />
+$D:..&nbsp;..M.MMNDDDDDDDNMM~..7.M,......O=MMMM...$NZ..&nbsp;...O.MMNNNNNNNNMM,M~&nbsp;....+DI.<br />
+ZD,..&nbsp;&nbsp;&nbsp;M.MMMNNNNNNNNMD.&nbsp;.8,MM.......7MMM,..Z.MM......8~NMMNNNNNNMMM~M=&nbsp;.&nbsp;&nbsp;&nbsp;~D7.<br />
+ZD,..&nbsp;&nbsp;&nbsp;M.MMMDDDDDDDNM7...Z?MMI...&nbsp;&nbsp;.7,NM...IDMM.&nbsp;&nbsp;...8I$MMNNNNNNNMM~M~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~D7.<br />
+$D:....&nbsp;M,MMMDDDDDDDMM~.&nbsp;.?OMNM$&nbsp;.....8,...Z.MMM...&nbsp;..78~MMDDDDDDNMM.M,.&nbsp;&nbsp;..+DI.<br />
+?D?.....8?DMMNDDDDDNMM...::MMNMM......~~...ODMMM~.....~8.MMNNNNNNMMM.M......7D=.<br />
+,DO.....?N=MMNDDDDDNMM..&nbsp;I.MMDNMN.&nbsp;.....&nbsp;.8.MMMM7......O.MMNNNNNNMMM:M.&nbsp;....8D..<br />
+.DD..&nbsp;.&nbsp;.M.MMMMMNNNMMM.&nbsp;&nbsp;O.MMNNMM:.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.:O8MNMMN&nbsp;.....+~MMMNNNNMMM?D$&nbsp;&nbsp;&nbsp;...DD..<br />
+.8D,...&nbsp;.N7ZMMMNNNNMMN...D:MMNNNMM&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;.8.MMNMMM.......7OMMMMMMMMM.M......~DZ..<br />
+.~DO....&nbsp;.M.MMMMNNNMM$...O7MNNNNNMI.....~$8MMMMMM.....&nbsp;.8+MMMMMMMM?88&nbsp;&nbsp;..&nbsp;.8D,..<br />
+..DD......OD=MMMNNNMM=..:7DMNNNNNMM.....8.MMNNNMM,......O.MMMMMMMM,M......,DD...<br />
+..7DI...&nbsp;&nbsp;.M.MMMNNNMM,..,7MMNNNNNNMI....OIMNNNNNM:......Z:MMNNNMM:NZ......$D?...<br />
+...DD......~M.MMNNNMN.....NMMMDDNNDM...Z.MNDDMMMM........I+MMMMM?$M......,D8....<br />
+...~D8..&nbsp;&nbsp;..+M.ZM...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..:MMNNNNM8.~I?MNNNM~,&nbsp;...&nbsp;&nbsp;.&nbsp;.....MM?IM.&nbsp;.&nbsp;...DD,.&nbsp;.&nbsp;<br />
+&nbsp;...$D$.&nbsp;&nbsp;&nbsp;.&nbsp;=MI?MMMMMMMMMMMMMNNNNNNMMMMMNNNNMMMMMMMMMMMMMMMMM.ZM.&nbsp;.....OD?.&nbsp;&nbsp;.&nbsp;<br />
+&nbsp;....8D8.&nbsp;&nbsp;.&nbsp;&nbsp;,ND.MMMNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNMM$~MM.&nbsp;&nbsp;&nbsp;...$DO....&nbsp;&nbsp;<br />
+......8DD....&nbsp;..IM.OMMNNNNNNNNNNNNNNNNNNNNNNNNNNDDDDDDDDDMM.DM.&nbsp;&nbsp;.....DD8...&nbsp;&nbsp;.&nbsp;<br />
+.......~DD........MN.NMMMDDDDDDDDDDDDDDDDDDDDDDDDDDDDDMMM:+MI.......,DDO........<br />
+&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;,DD~.&nbsp;..&nbsp;&nbsp;.:MD.:MMMNDDDDDDDDDDDDDDDDDDDDDDDMMMZ,=M8.&nbsp;&nbsp;..&nbsp;..+DD..&nbsp;...&nbsp;&nbsp;.&nbsp;<br />
+&nbsp;.&nbsp;..&nbsp;&nbsp;...8DO...&nbsp;&nbsp;&nbsp;...MMZ.IMMMMMDDDDDDDDDDDDDDNMMMMD.~MMZ...&nbsp;..&nbsp;..8D8..&nbsp;&nbsp;.&nbsp;.&nbsp;&nbsp;.&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.IDD~..&nbsp;&nbsp;.&nbsp;&nbsp;...OMO..ZNMMMMMMMMMMMMMMMD=.?MM7...&nbsp;&nbsp;.....+DD+.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..&nbsp;&nbsp;&nbsp;&nbsp;<br />
+.&nbsp;...&nbsp;&nbsp;&nbsp;.....8DD7.....&nbsp;..&nbsp;&nbsp;.IMMM8?..........~$MMMN~..&nbsp;........ZDD8..&nbsp;&nbsp;.&nbsp;&nbsp;...&nbsp;&nbsp;.&nbsp;<br />
+.....&nbsp;........,$DD$.............&nbsp;.:IZDNNN8Z?:...............ZDDD................<br />
+&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;....&nbsp;.7DD8:...&nbsp;..&nbsp;&nbsp;....&nbsp;.&nbsp;&nbsp;......&nbsp;..&nbsp;..&nbsp;..&nbsp;.&nbsp;.:DDDI......&nbsp;&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;<br />
+&nbsp;.&nbsp;..&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;..&nbsp;.&nbsp;...:DDDD7...&nbsp;....&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..&nbsp;.........$8DD8,......&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;.&nbsp;.&nbsp;&nbsp;.&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;.&nbsp;&nbsp;......=ZDDDD7,.....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;......:$DDDD8~...&nbsp;...&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+.&nbsp;..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;..&nbsp;&nbsp;...:ODDDDDDD8O$777$O8DDDDDDDZ,...&nbsp;...&nbsp;&nbsp;.&nbsp;&nbsp;...&nbsp;&nbsp;.&nbsp;&nbsp;...&nbsp;&nbsp;.&nbsp;<br />
+.....&nbsp;..........................,+$O88DDD88O$+,.................................<br />
+.&nbsp;..&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;.&nbsp;&nbsp;....&nbsp;.................&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;.&nbsp;&nbsp;...&nbsp;&nbsp;.&nbsp;&nbsp;...&nbsp;&nbsp;.&nbsp;</p><br />
+    <p>Type "help" for help.</p>
+    <div id="msg"></div>
+    <form id="commandline" onsubmit="store(); return false;">mu:\<span id="cd"></span>&gt;<input id="me" type="text" autofocus />
+        <input id="currentdir" type="hidden" />
+        <input id="submit" type="submit" />
+    </form>
+    <script>
+        var mystore = new goCommand();
+        mystore.nav = nav;
+        var me = document.getElementById("me");
+        me.focus();
+        me.addEventListener("input", function() { 
+                mystore.parseCLI(this.value); 
+                //when we go to predict dir content we will a function to create a temp curdirArray 
+            });
+        function store() { mystore.store(); }
+    </script>
+</body>
+</html>
