@@ -32,7 +32,9 @@ function goCommand() {
                     //var temp2 = this.hasPathBadChars(this.parpathArray);
                     //var temp3 = this.getDirContents(this.curpathArray.concat(this.parpathArray));
                     if(this.isPathGood(this.parpathArray) && this.isPathInNav(this.curpathArray.concat(this.parpathArray))  ) {
-                        this.currentpath.innerHTML = this.updateCurrentPathArray(this.curpathArray,this.parpathArray).join("\\");
+                        var pagepath = this.updateCurrentPathArray(this.curpathArray,this.parpathArray).join("\\")
+                        var pagecontent = this.getPageContent(pagepath);
+                        this.currentpath.innerHTML = pagepath + pathcontent;
                     }
                     else {
                         msgtext = "The system cannot find the path specified";
@@ -54,6 +56,7 @@ function goCommand() {
         }
         this.msg.innerHTML = this.msg.innerHTML + "<p class=\"entry\">mu:\\" + tempcurpath + "&gt;" + this.me.value + "<br />" + msgtext + "</p>";
         this.me.value = "";
+        document.body.scrollTop = document.body.scrollHeight;
         this.me.focus();
         return false;
     }
@@ -92,9 +95,10 @@ function goCommand() {
         var isIn = true;
         for ( var i = 0; i < ar.length; i++) {
             node = node[ar[i]];
+            if (node === null && i < (ar.length - 1)) isIn = false; break;
         }
         console.log(node);
-        if (node === null || node === undefined) isIn = false;
+        //if (node === null || node === undefined) isIn = false;
         return isIn;
     }
     this.isArray = function(obj) {
@@ -110,5 +114,29 @@ function goCommand() {
             }
         }
         return propArray;
+    }
+    this.getPageContent = function(path) {
+        var xhReq = new XMLHttpRequest();
+        xhReq.open("GET", "default.aspx?path="+path, false);
+        xhReq.send(null);
+        var serverResponse = xhReq.responseText;
+        return serverResponse;
+    }
+    this.asyncajaxcall = function() {
+        var xhReq = createXMLHttpRequest();
+        xhReq.open("get", "infiniteLoop.phtml", true); // Server stuck in a loop.
+        var requestTimer = setTimeout(function() {
+            xhReq.abort();
+            // Handle timeout situation, e.g. Retry or inform user.
+        }, MAXIMUM_WAITING_TIME);
+        xhReq.onreadystatechange = function() {
+            if (xhReq.readyState != 4)  { return; }
+                clearTimeout(requestTimer);
+            if (xhReq.status != 200)  {
+                // Handle error, e.g. Display error message on page
+                return;
+            }
+            var serverResponse = xhReq.responseText;
+        }
     }
 }
